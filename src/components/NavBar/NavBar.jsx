@@ -1,6 +1,6 @@
 
-
-import { Link } from "react-router";
+import './NavBar.css'
+import {  NavLink } from "react-router";
 const NavBar = () => {
     return (
         <div className=" max-w-screen-xl mx-auto px-6 lg:px-20 navbar ">
@@ -14,12 +14,12 @@ const NavBar = () => {
                 </div>
             </div>
         </div>
-        <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 text-white">
-                <li><Link to ="/">Home</Link></li>
-                <li><Link to = "/statistics">Statistics</Link></li>
-                <li><Link to = "/dashboard">Dashboard</Link></li>
-            </ul>
+        <div className="navbar-center hidden lg:flex" >
+            <nav className=" flex  gap-4 text-white" id="NavId">
+                <NavLink  to ="/">Home</NavLink>
+                <NavLink to = "/statistics">Statistics</NavLink>
+                <NavLink to = "/dashboard">Dashboard</NavLink>
+            </nav>
         </div>
         <div className="navbar-end gap-4">
             <button className="btn hidden md:block bg-house-builder-primary text-house-builder-black font-bold rounded-3xl">Book

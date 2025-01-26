@@ -3,7 +3,7 @@ import './NavBar.css'
 import {  NavLink } from "react-router";
 const NavBar = () => {
     return (
-        <div className=" max-w-screen-xl mx-auto px-6 lg:px-20 navbar ">
+        <div className=" max-w-screen-xl mx-auto px-10 lg:px-20 navbar ">
         <div className="navbar-start">
             <div className="flex justify-center items-center gap-2 ">
                 <div>
@@ -14,8 +14,8 @@ const NavBar = () => {
                 </div>
             </div>
         </div>
-        <div className="navbar-center hidden lg:flex" >
-            <nav className=" flex  gap-4 text-white" id="NavId">
+        <div className="navbar-center  lg:flex" >
+            <nav className=" flex gap-2  md:gap-4 text-white" id="NavId">
                 <NavLink  to ="/">Home</NavLink>
                 <NavLink to = "/statistics">Statistics</NavLink>
                 <NavLink to = "/dashboard">Dashboard</NavLink>

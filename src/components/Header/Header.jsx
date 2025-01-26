@@ -2,7 +2,7 @@ import NavBar from "../NavBar/NavBar";
 const Header = () => {
     return (
         <div>
-            <header className="  bg-violet-800 mx-5 rounded-lg h-[650px] md:h-[600px] ">
+            <header className="  bg-[#9538E2] mx-5 rounded-lg h-[650px] md:h-[600px] ">
                 <NavBar></NavBar>
                 <section className="max-w-screen-xl mx-auto px-6 lg:px-20 my-10 text-center  ">
                     <div className="  flex flex-col justify-center items-center  ">

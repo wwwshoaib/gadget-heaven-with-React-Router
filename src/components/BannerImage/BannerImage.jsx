@@ -3,7 +3,8 @@
 import BannerImg from "../../assets/banner.jpg"
 const BannerImage = () => {
     return (
-        <div>
+        <div className="max-w-5xl mx-auto">
+            
              {/* banner image */}
              <section className="relative -top-16 md:-top-36 flex justify-center ">
                     <div className="p-4  rounded-xl border border-white">

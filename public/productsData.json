@@ -1,75 +1,149 @@
-[ 
+[
     {
-        "product_id": 1,
-        "product_name": "Dell XPS 15 Laptop",
-        "category": "laptop",
-        "image": "https://i.postimg.cc/CL3nL23B/Dell-XPS-15-Laptop.jpg",
-        "price": 1599.99
-    }, 
-
-    {
-        "product_id": 2,
-        "product_name": "Samsung Galaxy S23 Ultra",
-        "category": "phone",
-        "image": "https://i.postimg.cc/t7QRyKs9/Samsung-Galaxy-S23-Ultra.jpg",
-        "price": 1199.99
-    },
-
-    {
-        "product_id": 3,
-        "product_name": "Samsung Galaxy Watch 6",
-        "category": "smartwatch",
-        "image": "https://i.postimg.cc/SsRNxvNw/Samsung-Galaxy-Watch-6.jpg",
-        "price": 299.99
-    },
-
-   
-    {
-        "product_id": 4,
-        "product_name": "Google Pixel 7 Pro",
-        "category": "phone",
-        "image": "https://i.postimg.cc/MGKQhBkd/Google-Pixel-7-Pro.jpg",
-        "price": 899.00
+      "product_id": 1,
+      "product_name": "Dell XPS 15 Laptop",
+      "category": "laptop",
+      "image": "https://i.postimg.cc/CL3nL23B/Dell-XPS-15-Laptop.jpg",
+      "price": 1599,
+      "specifications": {
+        "processor": "Intel Core i7-13700H",
+        "ram": "16GB DDR5",
+        "storage": "512GB SSD",
+        "display": "15.6\" 4K OLED Touchscreen",
+        "os": "Windows 11 Pro"
+      },
+      "description": "Ultra-slim laptop with stunning 4K OLED display, perfect for creatives and professionals.",
+      "rating": 4.7,
+      "reviews": 850
     },
     {
-        "product_id": 5,
-        "product_name": "iPhone 15 Pro",
-        "category": "iphone",
-        "image": "https://i.postimg.cc/0QzJNqyS/i-Phone-15-Pro.jpg",
-        "price": 999.00
+      "product_id": 2,
+      "product_name": "Samsung Galaxy S23 Ultra",
+      "category": "phone",
+      "image": "https://i.postimg.cc/t7QRyKs9/Samsung-Galaxy-S23-Ultra.jpg",
+      "price": 1199,
+      "specifications": {
+        "display": "6.8\" Dynamic AMOLED 2X",
+        "storage": "256GB",
+        "camera": "200MP + 12MP + 10MP Triple Rear",
+        "battery": "5000mAh",
+        "os": "Android 13"
+      },
+      "description": "Flagship Android phone with a 200MP camera, 8K video, and S Pen support.",
+      "rating": 4.8,
+      "reviews": 1200
     },
     {
-        "product_id": 6,
-        "product_name": "iPhone 14",
-        "category": "iphone",
-        "image": "https://i.postimg.cc/wT8s9Z8t/i-Phone-14.jpg",
-        "price": 799.00
+      "product_id": 3,
+      "product_name": "Samsung Galaxy Watch 6",
+      "category": "smartwatch",
+      "image": "https://i.postimg.cc/SsRNxvNw/Samsung-Galaxy-Watch-6.jpg",
+      "price": 299,
+      "specifications": {
+        "display": "1.5\" Super AMOLED",
+        "battery": "40hrs (typical use)",
+        "features": "Heart Rate Monitor, Sleep Tracking, GPS",
+        "compatibility": "Android & iOS"
+      },
+      "description": "Advanced smartwatch with health tracking and seamless smartphone integration.",
+      "rating": 4.5,
+      "reviews": 600
     },
     {
-        "product_id": 7,
-        "product_name": "Wireless Charging Pad",
-        "category": "accessory",
-        "image": "https://i.postimg.cc/FKmYNpS4/Wireless-Charging-Pad.jpg",
-        "price": 39.99
+      "product_id": 4,
+      "product_name": "Google Pixel 7 Pro",
+      "category": "phone",
+      "image": "https://i.postimg.cc/MGKQhBkd/Google-Pixel-7-Pro.jpg",
+      "price": 899,
+      "specifications": {
+        "display": "6.7\" QHD+ OLED (120Hz)",
+        "storage": "128GB",
+        "camera": "50MP + 12MP + 48MP Triple Rear",
+        "chipset": "Google Tensor G2",
+        "os": "Android 13"
+      },
+      "description": "AI-powered camera phone with flagship performance and pure Android experience.",
+      "rating": 4.6,
+      "reviews": 900
     },
     {
-        "product_id": 8,
-        "product_name": "Bluetooth Noise-Canceling Headphones",
-        "category": "accessory",
-        "image": "https://i.postimg.cc/Pq4PxDb8/Bluetooth-Noise-Canceling-Headphones.jpg",
-        "price": 199.99
+      "product_id": 5,
+      "product_name": "iPhone 15 Pro",
+      "category": "iphone",
+      "image": "https://i.postimg.cc/0QzJNqyS/i-Phone-15-Pro.jpg",
+      "price": 999,
+      "specifications": {
+        "display": "6.1\" Super Retina XDR",
+        "storage": "256GB",
+        "chipset": "A17 Pro Bionic",
+        "camera": "48MP + 12MP + 12MP Triple Rear",
+        "os": "iOS 17"
+      },
+      "description": "Titanium-built iPhone with ProMotion display and revolutionary Action button.",
+      "rating": 4.8,
+      "reviews": 1500
     },
     {
-        "product_id": 9,
-        "product_name": "Apple Watch Ultra",
-        "category": "smartwatch",
-        "image": "https://i.postimg.cc/vTpmjtyC/Apple-Watch-Ultra.jpg",
-        "price": 799.00
+      "product_id": 6,
+      "product_name": "iPhone 14",
+      "category": "iphone",
+      "image": "https://i.postimg.cc/wT8s9Z8t/i-Phone-14.jpg",
+      "price": 799,
+      "specifications": {
+        "display": "6.1\" Super Retina XDR",
+        "storage": "128GB",
+        "chipset": "A15 Bionic",
+        "camera": "12MP Dual Rear",
+        "os": "iOS 16"
+      },
+      "description": "Affordable iPhone with Ceramic Shield protection and cinematic video capabilities.",
+      "rating": 4.7,
+      "reviews": 2000
+    },
+    {
+      "product_id": 7,
+      "product_name": "Wireless Charging Pad",
+      "category": "accessory",
+      "image": "https://i.postimg.cc/FKmYNpS4/Wireless-Charging-Pad.jpg",
+      "price": 39,
+      "specifications": {
+        "power": "15W Fast Charging",
+        "compatibility": "Qi-enabled devices",
+        "design": "Non-slip silicone surface"
+      },
+      "description": "Sleek wireless charger for iPhones, Android phones, and earbuds.",
+      "rating": 4.3,
+      "reviews": 450
+    },
+    {
+      "product_id": 8,
+      "product_name": "Bluetooth Noise-Canceling Headphones",
+      "category": "accessory",
+      "image": "https://i.postimg.cc/Pq4PxDb8/Bluetooth-Noise-Canceling-Headphones.jpg",
+      "price": 199,
+      "specifications": {
+        "battery": "30hrs with ANC",
+        "features": "Transparency Mode, Foldable Design",
+        "codecs": "AAC, SBC, aptX"
+      },
+      "description": "Premium over-ear headphones with adaptive noise cancellation.",
+      "rating": 4.4,
+      "reviews": 700
+    },
+    {
+      "product_id": 9,
+      "product_name": "Apple Watch Ultra",
+      "category": "smartwatch",
+      "image": "https://i.postimg.cc/vTpmjtyC/Apple-Watch-Ultra.jpg",
+      "price": 799,
+      "specifications": {
+        "display": "1.92\" Retina LTPO OLED",
+        "battery": "36hrs (normal use)",
+        "features": "Depth Gauge, Action Button, Dual GPS",
+        "compatibility": "iOS Only"
+      },
+      "description": "Rugged smartwatch built for athletes and outdoor adventures.",
+      "rating": 4.7,
+      "reviews": 950
     }
-   
-
-  
-  
-   
-   
-]
+  ]

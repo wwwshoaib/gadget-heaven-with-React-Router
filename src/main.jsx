@@ -10,6 +10,7 @@ import {
 import "./index.css";
 import Statistics from "./components/Statistics/Statistics";
 import Root from "./components/Root/Root";
+import ProductDetails from "./components/ProductDetails/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,12 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home></Home>
       }, 
+      {
+        path: 'products/:product_id',
+        element: <ProductDetails></ProductDetails>,
+        loader: () => fetch('/productsData.json')
+
+      },
      
       {
         path: 'statistics',

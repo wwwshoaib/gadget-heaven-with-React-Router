@@ -15,10 +15,10 @@ const NavBar = () => {
             </div>
         </div>
         <div className="navbar-center  lg:flex "  >
-            <nav className=" flex gap-4 text-white text-center justify-center" id="NavId">
-                <NavLink  to ="/">Home</NavLink>
-                <NavLink to = "/statistics">Statistics</NavLink>
-                <NavLink to = "/dashboard">Dashboard</NavLink>
+            <nav className=" flex gap-4 text-white text-center justify-center " id="NavId">
+                <NavLink  to ="/" className="text-sm">Home</NavLink>
+                <NavLink to = "/statistics" className="text-sm">Statistics</NavLink>
+                <NavLink to = "/dashboard" className="text-sm">Dashboard</NavLink>
             </nav>
         </div>
         <div className="navbar-end gap-4">

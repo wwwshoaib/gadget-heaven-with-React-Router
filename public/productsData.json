@@ -14,7 +14,8 @@
     ],
     "description": "Ultra-slim laptop with stunning 4K OLED display, perfect for creatives and professionals.",
     "rating": 4.7,
-    "reviews": 850
+    "reviews": 850,
+    "availability": true
   },
   {
     "product_id": 2,
@@ -31,7 +32,8 @@
     ],
     "description": "Flagship Android phone with a 200MP camera, 8K video, and S Pen support.",
     "rating": 4.8,
-    "reviews": 1200
+    "reviews": 1200,
+    "availability": true
   },
   {
     "product_id": 3,
@@ -47,7 +49,8 @@
     ],
     "description": "Advanced smartwatch with health tracking and seamless smartphone integration.",
     "rating": 4.5,
-    "reviews": 600
+    "reviews": 600,
+    "availability": true
   },
   {
     "product_id": 4,
@@ -64,59 +67,30 @@
     ],
     "description": "AI-powered camera phone with flagship performance and pure Android experience.",
     "rating": 4.6,
-    "reviews": 900
+    "reviews": 900,
+    "availability": true
   },
   {
     "product_id": 5,
-    "product_name": "iPhone 15 Pro",
-    "category": "iphone",
-    "image": "https://i.postimg.cc/0QzJNqyS/i-Phone-15-Pro.jpg",
-    "price": 999,
+    "product_name": "Apple MacBook Pro 16\" M2 Max",
+    "category": "laptop",
+    "image": "https://i.postimg.cc/BvmwFShY/Apple-Mac-Book-Pro-16.jpg",
+    "price": 2499,
     "specifications": [
-      "display: 6.1\" Super Retina XDR",
-      "storage: 256GB",
-      "chipset: A17 Pro Bionic",
-      "camera: 48MP + 12MP + 12MP Triple Rear",
-      "os: iOS 17"
+      "chip: Apple M2 Max (12-core CPU)",
+      "ram: 32GB Unified Memory",
+      "storage: 1TB SSD",
+      "display: 16.2\" Liquid Retina XDR",
+      "battery: Up to 22hrs video playback",
+      "os: macOS Ventura"
     ],
-    "description": "Titanium-built iPhone with ProMotion display and revolutionary Action button.",
+    "description": "Pro-level MacBook with stunning mini-LED display and industry-leading performance.",
     "rating": 4.8,
-    "reviews": 1500
+    "reviews": 1300,
+    "availability": false
   },
   {
     "product_id": 6,
-    "product_name": "iPhone 14",
-    "category": "iphone",
-    "image": "https://i.postimg.cc/wT8s9Z8t/i-Phone-14.jpg",
-    "price": 799,
-    "specifications": [
-      "display: 6.1\" Super Retina XDR",
-      "storage: 128GB",
-      "chipset: A15 Bionic",
-      "camera: 12MP Dual Rear",
-      "os: iOS 16"
-    ],
-    "description": "Affordable iPhone with Ceramic Shield protection and cinematic video capabilities.",
-    "rating": 4.7,
-    "reviews": 2000
-  },
-  {
-    "product_id": 7,
-    "product_name": "Wireless Charging Pad",
-    "category": "accessory",
-    "image": "https://i.postimg.cc/FKmYNpS4/Wireless-Charging-Pad.jpg",
-    "price": 39,
-    "specifications": [
-      "power: 15W Fast Charging",
-      "compatibility: Qi-enabled devices",
-      "design: Non-slip silicone surface"
-    ],
-    "description": "Sleek wireless charger for iPhones, Android phones, and earbuds.",
-    "rating": 4.3,
-    "reviews": 450
-  },
-  {
-    "product_id": 8,
     "product_name": "Bluetooth Noise-Canceling Headphones",
     "category": "accessory",
     "image": "https://i.postimg.cc/Pq4PxDb8/Bluetooth-Noise-Canceling-Headphones.jpg",
@@ -128,10 +102,11 @@
     ],
     "description": "Premium over-ear headphones with adaptive noise cancellation.",
     "rating": 4.4,
-    "reviews": 700
+    "reviews": 700,
+    "availability": true
   },
   {
-    "product_id": 9,
+    "product_id": 7,
     "product_name": "Apple Watch Ultra",
     "category": "smartwatch",
     "image": "https://i.postimg.cc/vTpmjtyC/Apple-Watch-Ultra.jpg",
@@ -144,6 +119,99 @@
     ],
     "description": "Rugged smartwatch built for athletes and outdoor adventures.",
     "rating": 4.7,
-    "reviews": 950
+    "reviews": 950,
+    "availability": true
+  },
+  {
+    "product_id": 8,
+    "product_name": "HP Spectre x360 14",
+    "category": "laptop",
+    "image": "https://i.postimg.cc/59S1Hbxv/HP-Spectre-x360-14.jpg",
+    "price": 1499,
+    "specifications": [
+      "processor: Intel Core i7-1255U",
+      "ram: 16GB LPDDR4X",
+      "storage: 1TB PCIe NVMe SSD",
+      "display: 13.5\" 3K2K OLED Touch",
+      "os: Windows 11 Home",
+      "weight: 2.95 lbs"
+    ],
+    "description": "Convertible 2-in-1 laptop with premium CNC-machined design and pen support.",
+    "rating": 4.6,
+    "reviews": 720,
+    "availability": true
+  },
+  {
+    "product_id": 9,
+    "product_name": "Lenovo ThinkPad X1 Carbon Gen 10",
+    "category": "laptop",
+    "image": "https://i.postimg.cc/tTHQTmw2/Lenovo-Think-Pad-X1-Carbon-Gen-10.jpg",
+    "price": 1699,
+    "specifications": [
+      "processor: Intel Core i7-1260P",
+      "ram: 32GB LPDDR5",
+      "storage: 512GB SSD",
+      "display: 14\" WUXGA IPS (400 nits)",
+      "os: Windows 11 Pro",
+      "security: Fingerprint Reader + IR Camera"
+    ],
+    "description": "Business-class ultrabook with military-grade durability and best-in-class keyboard.",
+    "rating": 4.5,
+    "reviews": 850,
+    "availability": false
+  },
+  {
+    "product_id": 10,
+    "product_name": "Asus ROG Zephyrus G14",
+    "category": "laptop",
+    "image": "https://i.postimg.cc/nhYWHYqt/ASUS-ROG.jpg",
+    "price": 1899,
+    "specifications": [
+      "processor: AMD Ryzen 9 7940HS",
+      "gpu: NVIDIA RTX 4060 8GB",
+      "ram: 32GB DDR5",
+      "storage: 1TB PCIe 4.0 SSD",
+      "display: 14\" QHD+ 165Hz",
+      "os: Windows 11 Home"
+    ],
+    "description": "Powerful gaming laptop with AniMe Matrix LED lid and premium AMD performance.",
+    "rating": 4.7,
+    "reviews": 980,
+    "availability": true
+  },
+  {
+    "product_id": 11,
+    "product_name": "Wireless Charging Pad",
+    "category": "accessory",
+    "image": "https://i.postimg.cc/FKmYNpS4/Wireless-Charging-Pad.jpg",
+    "price": 39,
+    "specifications": [
+      "power: 15W Fast Charging",
+      "compatibility: Qi-enabled devices",
+      "design: Non-slip silicone surface"
+    ],
+    "description": "Sleek wireless charger for iPhones, Android phones, and earbuds.",
+    "rating": 4.3,
+    "reviews": 450,
+    "availability": false
+  },
+  {
+    "product_id": 12,
+    "product_name": "HP Spectre x360 14",
+    "category": "laptop",
+    "image": "https://i.postimg.cc/V6S4bj0v/HP-Spectre-x360-14.jpg",
+    "price": 1499,
+    "specifications": [
+      "processor: Intel Core i7-1255U",
+      "ram: 16GB LPDDR4X",
+      "storage: 1TB PCIe NVMe SSD",
+      "display: 13.5\" 3K2K OLED Touch",
+      "os: Windows 11 Home",
+      "weight: 2.95 lbs"
+    ],
+    "description": "Convertible 2-in-1 laptop with premium CNC-machined design and pen support.",
+    "rating": 4.6,
+    "reviews": 720,
+    "availability": true
   }
 ]

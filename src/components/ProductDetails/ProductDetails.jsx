@@ -2,6 +2,7 @@ import { useLoaderData, useParams } from "react-router";
 import Specification from "../Specification/Specification";
 import { CiShoppingCart } from "react-icons/ci";
 import LoveImg from '../../assets/love-icon.png'
+import { addToStoredProductsList, addToStoredWishList } from "../../utility/addToDb";
 
 
 
@@ -11,7 +12,18 @@ const ProductDetails = () => {
     const products = useLoaderData();
     const id = parseInt(product_id);
     const selectedProduct = products.find(product => product.product_id === id);
-    const { image, product_name, price, description, specifications, rating } = selectedProduct;
+    const { image, product_name, price, description, specifications, rating, availability } = selectedProduct;
+
+    //handle add to cart
+    const handleAddToCart = (id) => {
+        addToStoredProductsList(id);
+    } 
+
+    //handle add to cart
+    const handleWishList = (id) => {
+        addToStoredWishList(id);
+    }
+
 
 
     return (
@@ -34,10 +46,16 @@ const ProductDetails = () => {
                         <div className="w-2/3 p-2 px-2 md:p-5 ">
                             <p className="font-semibold text-xl md:text-2xl">{product_name}</p>
                             <p>Price: $ {price}</p> <br />
-                            {/* stat */}
-                            <div className="text-black w-28 h-10 bg-gray-100  rounded-full my-5 ">
+                            {/* availability */}
+                            <div className=" w-28 h-10 bg-gray-100  rounded-full my-5 ">
 
-                                <div className="text-green-500 px-5 py-2">In stock</div>
+                            {
+                                   availability?
+                                    <p className="text-green-500 px-3 py-2">In Stock</p>
+                                    :   
+                                    <p className="text-red-500 px-3 py-2">Not In Stock</p>
+                                
+                            }
 
 
                             </div>
@@ -66,11 +84,13 @@ const ProductDetails = () => {
                             <div className="text-white flex justify-between w-52">
                                 
 
-                            <button className="btn bg-fuchsia-600 rounded-full text-white  ">Add to Cart 
+                            <button onClick={() => handleAddToCart(product_id)}
+                            className="btn bg-fuchsia-600 rounded-full text-white  ">Add to Cart 
                                 <span className="text-2xl font-semibold">< CiShoppingCart /></span>
                             </button>
                            {/* button: wishlist */}
-                           <button> <img src =  {LoveImg}alt="" 
+                           <button  onClick={() => handleWishList(product_id)}> 
+                            <img src =  {LoveImg}alt="" 
                             className="w-12 h-12"/></button>
                            
                             </div>

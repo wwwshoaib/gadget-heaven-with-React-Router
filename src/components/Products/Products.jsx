@@ -24,7 +24,7 @@ const Products = () => {
                         <button className="bg-slate-100 py-2 w-full md:w-36 rounded-2xl  hover:bg-green-300">Phones</button> <br />
                         <button className="bg-slate-100 py-2 w-full md:w-36 rounded-2xl  hover:bg-green-300">Accessories</button> <br />
                         <button className="bg-slate-100 py-2 w-full md:w-36 rounded-2xl  hover:bg-green-300">Smart Watches</button> <br />
-                        <button className="bg-slate-100 py-2 w-full md:w-36 rounded-2xl  hover:bg-green-300">MacBook</button> <br />
+                       
                         <button className="bg-slate-100 py-2 w-full md:w-36 rounded-2xl  hover:bg-green-300">iphone</button> <br />
                     </div>
                 </div>

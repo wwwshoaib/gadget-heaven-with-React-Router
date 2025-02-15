@@ -2,7 +2,22 @@ import { CiShoppingCart } from "react-icons/ci";
 import LoveImg from '../../assets/love-icon.png'
 import './NavBar.css'
 import { NavLink } from "react-router";
+import { getStoredProductsList } from "../../utility/addToDb";
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 const NavBar = () => {
+    const [product, setProduct] = useState(null);
+
+  
+    useEffect (() => {
+        const storedCartList = getStoredProductsList();
+        const productNumbers = storedCartList.length;
+        const prd = product + productNumbers;
+
+        setProduct(prd)
+       
+    
+    },[])
     return (
         <div className=" max-w-5xl mx-auto  navbar block md:flex  bg-[#9538E2] rounded-t-2xl px-10">
             <div className="navbar-start">
@@ -22,9 +37,12 @@ const NavBar = () => {
                     <NavLink to="/dashboard" className="text-md">Dashboard</NavLink>
                 </nav>
             </div>
-            <div className="navbar-end gap-4">
-                <button className="w-8 h-8  bg-white rounded-full text-black text-2xl p-1" >< CiShoppingCart />
+            <div className="navbar-end gap-1">
+          
+                <button className="w-8 h-8  bg-white rounded-full text-black text-2xl p-1" >   < CiShoppingCart />
+            
                 </button>
+                {product}
                 {/* button: wishlist */}
                 <button> <img src={LoveImg} alt=""
                     className="w-8 h-8 bg-white rounded-full" /></button>
@@ -32,5 +50,7 @@ const NavBar = () => {
         </div>
     );
 };
-
+NavBar.propTypes = {
+    allProducts:PropTypes.array
+}
 export default NavBar;

@@ -1,12 +1,17 @@
 
 
 import PropTypes from "prop-types";
+import { RxCross1 } from "react-icons/rx";
 import Specification from "../Specification/Specification";
 
 const WishList = ({ product }) => {
     const { image, product_name, description, price, specifications, rating } = product;
     return (
         <div className="bg-white p-5 mb-5 rounded-xl">
+               {/* icon: cross or delete button */}
+                        <div className="flex justify-end">
+                            <button>{<RxCross1 />}</button>
+                        </div>
             <div className="card card-side bg-base-100 shadow-sm">
                 <div className="md:flex gap-10">
                     <div>

@@ -15,11 +15,14 @@ const DashBoard = () => {
     const allProducts = useLoaderData();
     const [cartList, setCartList] = useState([]);
     const [wishList, setWishList] = useState([]);
+   
+  
     useEffect (() => {
         const storedCartList = getStoredProductsList();
         const storedCartListInt = storedCartList.map(id => parseInt(id));
         const cartProductList = allProducts.filter(product => storedCartListInt.includes(product.product_id));
-        setCartList(cartProductList)
+        setCartList(cartProductList);
+      
     },[])
 
     useEffect (() => {
@@ -27,7 +30,10 @@ const DashBoard = () => {
         const storedWishListInt = storedWishList.map(id => parseInt(id));
         const wishProductList = allProducts.filter(product => storedWishListInt.includes(product.product_id));
         setWishList(wishProductList)
-    },[])
+    },[]) 
+
+    // product price 
+   
     return (
         <div className="max-w-5xl mx-auto">
             <DashBoardHeader> </DashBoardHeader>

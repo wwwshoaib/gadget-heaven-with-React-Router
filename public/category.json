@@ -1,0 +1,58 @@
+[
+    {
+      "product_id": 1,
+      "category": "laptop"
+      
+    },
+    {
+      "product_id": 2,
+      "category": "phone"
+     
+    },
+    {
+      "product_id": 3,
+      "category": "smartwatch"
+    
+    },
+    {
+      "product_id": 4,
+      "category": "phone"
+
+    },
+    {
+      "product_id": 5,
+      "category": "laptop"
+     
+    },
+    {
+      "product_id": 6,
+      "category": "accessory"
+    },
+    {
+      "product_id": 7,
+      "category": "smartwatch"
+    },
+    {
+      "product_id": 8,
+      "category": "laptop"
+
+    },
+    {
+      "product_id": 9,
+      "category": "laptop"
+    },
+    {
+      "product_id": 10,
+      "category": "laptop"
+     
+    },
+    {
+      "product_id": 11,
+      "category": "accessory"
+    },
+    {
+      "product_id": 12,
+      "category": "laptop"
+     
+    }
+  ]

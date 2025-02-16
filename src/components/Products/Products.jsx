@@ -43,6 +43,7 @@ const Products = () => {
                     </div>
                 </div>
                 <div className="  col-span-4 ">
+                    {/* Sort products */}
                     {/* products display */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 py-2 mb-4">
 

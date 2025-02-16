@@ -1,17 +1,27 @@
 import { useEffect, useState } from "react";
-
+import { useLoaderData, useParams } from "react-router-dom";
 import Product from "../Product/Product";
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
+
+
 
 const Products = () => {
+    const productsData = useLoaderData();
+    const { category } = useParams();
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('/productsData.json')
-            .then(res => res.json())
-            .then(data => setProducts(data))
+        if (category) {
+            const filteredByCategory = [...productsData].filter(product => product.category === category);
+            setProducts(filteredByCategory)
+        }
 
-    }, [])
+        else {
+            setProducts(productsData.slice(0, 9))
+        }
+
+    }, [productsData, category])
 
     return (
         <div className="bg-slate-50 max-w-5xl mx-auto">
@@ -19,19 +29,35 @@ const Products = () => {
             <div className=" grid grid-cols-1 md:grid-cols-5   ">
                 <div className="col-span-1">
                     {/* products menu */}
-                    <div className=" text-center my-0 md:py-10 space-y-3 block  bg-white">
-                     
-                        <button className="bg-slate-100 py-2 w-full md:w-36 rounded-2xl  hover:bg-green-300">All Products</button> <br />
-                        <button className="bg-slate-100 py-2 w-full md:w-36 rounded-2xl  hover:bg-green-300">All Products</button> <br />
-                        <button className="bg-slate-100 py-2 w-full md:w-36 rounded-2xl  hover:bg-green-300">All Products</button> <br />
-                        <button className="bg-slate-100 py-2 w-full md:w-36 rounded-2xl  hover:bg-green-300">All Products</button> <br />
-                        <button className="bg-slate-100 py-2 w-full md:w-36 rounded-2xl  hover:bg-green-300">All Products</button> <br />
-                      
-            
+                    <div className=" text-center my-0 md:py-10 space-y-2 block  bg-white" id="CategoryId">
+
+                        <NavLink to='/' >All products </NavLink> <br />
+
+
+                        <NavLink to='/category/laptop'  >Laptop</NavLink> <br />
+
+
+                        <NavLink to='/category/phone'  >Phone</NavLink> <br />
+
+
+                        <NavLink to='/category/smartwatch' >Smart Watch</NavLink> <br />
+
+
+                        <NavLink to='/category/accessory'>Accessories</NavLink> <br />
+
+
+
+                        <NavLink to='/category/:'  >LED TV</NavLink>
+
+
+
+
+
+
+
                     </div>
                 </div>
                 <div className="  col-span-4 ">
-
                     {/* products display */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 py-2 mb-4">
 
@@ -46,10 +72,11 @@ const Products = () => {
 
 
     );
-}; 
+};
 
 Products.propTypes = {
-    category:PropTypes.array
+    category: PropTypes.array,
+    categories: PropTypes.array
 }
 
 export default Products;

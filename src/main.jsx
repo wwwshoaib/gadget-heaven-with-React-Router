@@ -12,6 +12,7 @@ import Statistics from "./components/Statistics/Statistics";
 import Root from "./components/Root/Root";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
 import { ToastContainer } from 'react-toastify';
+import Products from "./components/Products/Products";
 
 const router = createBrowserRouter([
   {
@@ -23,12 +24,17 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
+        loader: () => fetch('../public/category.json'),
         children: [
+         
+         
           {
-            path: '/',
-          
-
+            path: '/category/:category',
+            element: <Products></Products>,
+            loader: () => fetch('../public/productsData.json'),
+        
           },
+        
         ]
       },
       {

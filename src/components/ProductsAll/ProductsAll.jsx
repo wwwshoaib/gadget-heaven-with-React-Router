@@ -1,29 +1,20 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Product from "../Product/Product";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
+const ProductsAll = () => {
+    
 
-
-
-const Products = () => {
-    const productsData = useLoaderData();
-    const { category } = useParams();
     const [products, setProducts] = useState([]);
-    const navigate = useNavigate();
+
 
     useEffect(() => {
-        if (category) {
-            const filteredByCategory = [...productsData].filter(product => product.category === category);
-            setProducts(filteredByCategory)
-        }
+        fetch('/public/productsData.json')
+            .then(response => response.json())
+            .then(data => setProducts(data))
 
-        else {
-            setProducts(productsData.slice(0, 9))
-        }
-
-    }, [productsData, category])
+    }, [])
 
     return (
         <div className="bg-slate-50 max-w-5xl mx-auto">
@@ -33,7 +24,6 @@ const Products = () => {
                     {/* products menu:NavLink */}
                     <div className=" text-center my-0 md:py-10 block  bg-white" >
                         <nav className="space-y-2" id="NavId">
-                            <div><NavLink to='/' >Products </NavLink> <br /> </div>
                             <div> <NavLink to='/category/laptop'  >Laptop</NavLink> <br />  </div>
                             <div>     <NavLink to='/category/phone'  >Phone</NavLink> <br /></div>
                             <div>   <NavLink to='/category/smartwatch' >Smart Watch</NavLink> <br /> </div>
@@ -51,7 +41,7 @@ const Products = () => {
                         }
                     </div>
                     {/* Button to show all product */}
-                    <button onClick={() => navigate('/allproducts')} className="btn btn-warning">View all products</button>
+
                 </div>
             </div>
 
@@ -61,9 +51,9 @@ const Products = () => {
     );
 };
 
-Products.propTypes = {
+ProductsAll.propTypes = {
     category: PropTypes.array,
     categories: PropTypes.array
 }
 
-export default Products;
+export default ProductsAll;

@@ -12,6 +12,6 @@ const Specification = ({specification}) => {
     );
 };
 Specification.propTypes = {
-    specification:PropTypes.object
+    specification:PropTypes.array
 }
 export default Specification;

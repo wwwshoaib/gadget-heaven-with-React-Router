@@ -11,7 +11,6 @@ import "./index.css";
 import Statistics from "./components/Statistics/Statistics";
 import Root from "./components/Root/Root";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
-import { ToastContainer } from 'react-toastify';
 import Products from "./components/Products/Products";
 import AllProducts from "./components/AllProducts/AllProducts";
 
@@ -25,34 +24,26 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('../public/category.json'),
+        loader: () => fetch('../category.json'),
         children: [
-         
-         
+
+
           {
             path: '/category/:category',
             element: <Products></Products>,
-            loader: () => fetch('../public/productsData.json'),
-        
+            loader: () => fetch('../productsData.json'),
+
           },
-        
+
         ]
       },
       {
-        path: '/',
+        path: 'products/:product_id',
         element: <ProductDetails></ProductDetails>,
-        loader: () => fetch('../productsData.json'),
-        children: [
-          {
-            path: 'products/:product_id',
-            element: <ProductDetails></ProductDetails>,
-            loader: () => fetch('../productsData.json')
-    
-          },
-        ]
+        loader: () => fetch('../productsData.json')
 
       },
-      
+
 
       {
         path: 'allproducts',
@@ -76,18 +67,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-    <ToastContainer
-      position="top-center"
-      autoClose={5000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick={false}
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="colored"
-   
-    />
+
   </React.StrictMode>
 );

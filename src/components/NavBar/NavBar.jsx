@@ -1,25 +1,17 @@
 import { CiShoppingCart } from "react-icons/ci";
 import LoveImg from '../../assets/love-icon.png'
 import './NavBar.css'
-import { NavLink } from "react-router";
-import { getStoredProductsList } from "../../utility/addToDb";
-import { useEffect, useState } from "react";
+import { NavLink} from "react-router";
+
 import PropTypes from "prop-types";
 const NavBar = () => {
-    const [product, setProduct] = useState(null);
+
+    
+  
 
 
-    useEffect(() => {
-        const storedCartList = getStoredProductsList();
-        const productNumbers = storedCartList.length;
-        const prd = product + productNumbers;
-
-        setProduct(prd)
-
-
-    }, [])
     return (
-        <div className=" max-w-5xl mx-auto  navbar block md:flex  bg-[#9538E2] rounded-t-2xl px-10 items-center">
+        <div className=" max-w-5xl mx-auto  navbar block md:flex  bg-[#9538E2]  rounded-t-2xl px-10 items-center">
             <div className="navbar-start">
                 {/* dropdown */}
                 <div className="dropdown">
@@ -66,7 +58,7 @@ const NavBar = () => {
                 <button className="w-8 h-8  bg-white rounded-full text-black text-2xl p-1" >   < CiShoppingCart />
 
                 </button>
-                {product}
+             
                 {/* button: wishlist */}
                 <button> <img src={LoveImg} alt=""
                     className="w-8 h-8 bg-white rounded-full" /></button>
@@ -131,4 +123,5 @@ export default NavBar;
     <div className="navbar-end">
         <a className="btn">Button</a>
     </div>
+    
 </div>

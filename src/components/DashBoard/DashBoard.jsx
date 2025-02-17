@@ -5,7 +5,7 @@ import DashBoardHeader from "../DashBoardHeader/DashBoardHeader";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { useEffect, useState } from "react";
-import { getStoredProductsList, getStoredWishList } from "../../utility/addToDb";
+import { getStoredProductsList, getStoredWishList,  } from "../../utility/addToDb";
 import CartList from "../CartList/CartList";
 import WishList from "../WishList/WishList";
 
@@ -42,11 +42,11 @@ const DashBoard = () => {
             const sortedProducts = [...cartProductList].sort((a, b) => b.price - a.price);
             setCartList(sortedProducts);
         }
-    } 
+    }
 
 
-     // sort WishList products by price 
-     const handleToSortWishListProducts = sortBy => {
+    // sort WishList products by price 
+    const handleToSortWishListProducts = sortBy => {
         const storedWishList = getStoredWishList();
         const storedWishListInt = storedWishList.map(id => parseInt(id));
         const wishListProducts = allProducts.filter(product => storedWishListInt.includes(product.product_id));
@@ -54,9 +54,8 @@ const DashBoard = () => {
             const sortedProducts = [...wishListProducts].sort((a, b) => b.price - a.price);
             setWishList(sortedProducts);
         }
-    } 
-
-
+    }
+   
 
     return (
         <div className="max-w-5xl mx-auto">
@@ -91,7 +90,9 @@ const DashBoard = () => {
                                 </div>
                             </div>
                             {
-                                cartList.map(product => <CartList key={product.product_id} product={product} ></CartList>)
+                                cartList.map(product => <CartList key={product.product_id}
+                                    product={product}
+                                ></CartList>)
                             }
                         </TabPanel>
                         <TabPanel>
@@ -109,7 +110,9 @@ const DashBoard = () => {
                                 </div>
                             </div>
                             {
-                                wishList.map(product => <WishList key={product.product_id} product={product} ></WishList>)
+                                wishList.map(product => <WishList key={product.product_id}
+                                     product={product} 
+                                     ></WishList>)
                             }
                         </TabPanel>
                     </div>

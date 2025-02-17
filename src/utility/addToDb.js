@@ -1,4 +1,5 @@
-import { toast } from "react-toastify";
+import toast from 'react-hot-toast';
+
 
 //get the data
 const getStoredProductsList = () => {
@@ -14,14 +15,12 @@ const getStoredProductsList = () => {
 } 
 
 
-//store the data
+//store the data to Cart
 
 const addToStoredProductsList = (id) => {
     const storedList = getStoredProductsList();
     if(storedList.includes(id)) {
-        toast.warning("Already added to Cart !", {
-            position: "top-center",
-          });
+        toast.error('Already added to Cart!');
     } 
 
     else {
@@ -29,9 +28,7 @@ const addToStoredProductsList = (id) => {
         const storedListStr = JSON.stringify(storedList);
         localStorage.setItem('product-list', storedListStr)
         //toast notification
-        toast.success("Successfully added to Cart !", {
-            position: "top-center",
-          });
+        toast.success('Successfully added to Cart!');
     }
 } 
 
@@ -59,9 +56,7 @@ const getStoredWishList = () => {
 const addToStoredWishList = (id) => {
     const storedList = getStoredWishList();
     if(storedList.includes(id)) {
-        toast.warning("Already added to WishList !", {
-            position: "top-center",
-          });
+        toast.error('Already added to WishList!');
     } 
 
     else {
@@ -69,10 +64,28 @@ const addToStoredWishList = (id) => {
         const storedListStr = JSON.stringify(storedList);
         localStorage.setItem('wish-list', storedListStr)
          //toast notification
-         toast.success("Successfully added to WishList !", {
-            position: "top-center",
-          });
+         //toast notification
+         toast.success('Successfully added to WishList!');
     }
+}  
+
+//remove the product from cart list
+
+const removeCartProduct = id => {
+    const cartProducts = getStoredProductsList();
+    const remaining = cartProducts.filter(product => product.product_id !=id);
+    localStorage.setItem('product-list', JSON.stringify(remaining));
+    toast.success('Successfully removed the product from Cart!');
 } 
 
-export { getStoredProductsList, addToStoredProductsList, addToStoredWishList ,  getStoredWishList }
+
+//remove the product from cart list
+
+const removeWishProduct = id => {
+    const wishProducts = getStoredWishList();
+    const remaining = wishProducts.filter(product => product.product_id !=id);
+    localStorage.setItem('wish-list', JSON.stringify(remaining));
+    toast.success('Successfully removed the product from WishList!');
+}
+
+export { getStoredProductsList, addToStoredProductsList, addToStoredWishList ,  getStoredWishList, removeCartProduct, removeWishProduct }

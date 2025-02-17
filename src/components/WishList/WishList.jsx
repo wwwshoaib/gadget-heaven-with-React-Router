@@ -2,15 +2,17 @@
 
 import PropTypes from "prop-types";
 import { RxCross1 } from "react-icons/rx";
-import Specification from "../Specification/Specification";
 
-const WishList = ({ product }) => {
-    const { image, product_name, description, price, specifications, rating } = product;
+
+const WishList = ({ product, handleWishRemove  }) => {
+    const { image, product_name, description, price,  rating, product_id } = product;
     return (
         <div className="bg-white p-5 mb-5 rounded-xl">
                {/* icon: cross or delete button */}
                         <div className="flex justify-end">
-                            <button>{<RxCross1 />}</button>
+                            <button
+                            onClick={()=> handleWishRemove(product_id) }
+                            >{<RxCross1 />}</button>
                         </div>
             <div className="card card-side bg-base-100 shadow-sm">
                 <div className="md:flex gap-10">
@@ -26,10 +28,7 @@ const WishList = ({ product }) => {
                         <p className="text-sm">{description}</p>
                         <p>Price: $ {price}</p>
                         <div className="text-sm md:text-md pb-5">
-                            <p className="font-semibold text-xl">Specifications: </p>
-                            {
-                                specifications.map((specification, index) => <Specification key={index} specification={specification} ></Specification>)
-                            }
+                           
 
                             <p className="font-semibold text-xl pt-3 mb-3">Ratings: </p>
                             <div className="flex justify-between w-40" >
@@ -46,7 +45,7 @@ const WishList = ({ product }) => {
                                 </div>
                             </div>
                         </div>
-                        <button className="btn bg-green-400">Add to Cart</button>
+                       
 
                     </div>
                 </div>
@@ -57,6 +56,7 @@ const WishList = ({ product }) => {
 };
 
 WishList.propTypes = {
-    product: PropTypes.object
+    product: PropTypes.object,
+    handleWishRemove: PropTypes.func,
 }
 export default WishList;

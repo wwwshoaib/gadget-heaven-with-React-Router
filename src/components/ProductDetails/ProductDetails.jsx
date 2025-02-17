@@ -2,7 +2,8 @@ import { useLoaderData, useParams } from "react-router";
 import Specification from "../Specification/Specification";
 import { CiShoppingCart } from "react-icons/ci";
 import LoveImg from '../../assets/love-icon.png'
-import { addToStoredProductsList, addToStoredWishList } from "../../utility/addToDb";
+import { addToStoredProductsList, addToStoredWishList, getStoredProductsList, getStoredWishList } from "../../utility/addToDb";
+import { useEffect, useState } from "react";
 
 
 
@@ -14,15 +15,41 @@ const ProductDetails = () => {
     const selectedProduct = products.find(product => product.product_id === id);
     const { image, product_name, price, description, specifications, rating, availability } = selectedProduct;
 
+     //Disabling button after the product added to Cart/WishList
+     const [isAddedCart, setIsAddedCart] = useState(false);
+     useEffect (() => {
+         const singleData = products.find(product => product.product_id == id)
+         const cartProducts = getStoredProductsList();
+         const isExist = cartProducts.find(item => item.id == singleData.product_id)
+         if(isExist) {
+             setIsAddedCart(true)
+         }
+     }, [id, products]) 
+
+      //Disabling button after the product added to Cart/WishList
+      const [isAddedWishList, setIsAddedWishList] = useState(false);
+      useEffect (() => {
+          const singleData = products.find(product => product.product_id == id)
+          const WishListProducts = getStoredWishList()
+          const isExist = WishListProducts.find(item => item.id == singleData.product_id)
+          if(isExist) {
+              setIsAddedWishList(true)
+          }
+      }, [id, products])
+
     //handle add to cart
     const handleAddToCart = (id) => {
         addToStoredProductsList(id);
+        setIsAddedCart(true)
     } 
 
     //handle add to cart
     const handleWishList = (id) => {
         addToStoredWishList(id);
-    }
+        setIsAddedWishList(true)
+    } 
+
+   
 
 
 
@@ -84,12 +111,14 @@ const ProductDetails = () => {
                             <div className="text-white flex justify-between w-52">
                                 
 
-                            <button onClick={() => handleAddToCart(product_id)}
+                            <button disabled = {isAddedCart}
+                            onClick={() => handleAddToCart(product_id)}
                             className="btn bg-fuchsia-600 rounded-full text-white  ">Add to Cart 
                                 <span className="text-2xl font-semibold">< CiShoppingCart /></span>
                             </button>
                            {/* button: wishlist */}
-                           <button  onClick={() => handleWishList(product_id)}> 
+                           <button disabled = {isAddedWishList}
+                            onClick={() => handleWishList(product_id)}> 
                             <img src =  {LoveImg}alt="" 
                             className="w-12 h-12"/></button>
                            
@@ -100,7 +129,6 @@ const ProductDetails = () => {
                 </div>
 
             </div>
-
 
         </div>
     );

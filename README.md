@@ -1,8 +1,34 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live link to the deployed project
+   https://teal-donut-c2fdd3.netlify.app/
 
-Currently, two official plugins are available:
+##  Requirement Document Link: 
+ https://github.com/wwwshoaib/gadget-heaven-with-React-Router
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## List of React Fundamental concepts used in the project:
+  - react router
+  - useEffect
+  - useState
+  - map
+  - filter
+  - find
+  - NavLink
+  - Link
+  - useParams
+  - props
+  - component
+  - useLoaderData
+  - react toast
+  - nested routing
+
+## What you have used for handling and managing data:
+   localStorage
+
+## 5 key features of the project
+  -  Fetch and display products data using fetch
+  - button Disable functionality 
+  - dynamic routing
+  -  Sorting Cart and wishList by price in descending order
+  - Device-responsive
+  
